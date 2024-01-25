@@ -1,0 +1,1 @@
+ Adds 2 columns to Namebase export file. "unicode" and "valid_punycode", showing the script or emoticon, and whether it is valid IDNA, or alt/nonvalid. You just need the .csv export file saved with the default name ( Namebase-domains-export.csv ) in the same folder that you run this program from.

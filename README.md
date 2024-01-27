@@ -1,6 +1,6 @@
 # Punytag
 
-Punytag is a tool that adds 2 columns to your Namebase export file, which displays tags and unicode names (emojis or foreign characters). Sort your portfolio easier with punycode status and basic tags for Handshake domain names. (HNS is root. If it's not in the rootzone, it's not web3.)
+Punytag is a tool that adds 2 columns to your Namebase or Bobwallet export file, which displays tags and unicode names (emojis or foreign characters). Sort your portfolio easier with punycode status and basic tags for Handshake domain names. (HNS is root. If it's not in the rootzone, it's not web3.)
 
 ## Features
 
@@ -35,7 +35,7 @@ Having a tag of only PUNY_INVALID means that this name only displays blank or er
     ```bash
     pip install -r requirements.txt
     ```
-4. Place your Namebase export file (default: `Namebase-domains-export.csv`) in the project directory.
+4. Place your Namebase export file (with default name: `Namebase-domains-export.csv`) , or Bobwallet export file (named: 'bob.csv') in the project directory.
 5. Run Punytag:
     ```bash
     python punytag.py

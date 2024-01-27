@@ -1,6 +1,6 @@
 import pandas as pd
 import idna
-import re
+import regex as re
 
 def punycode_convert_validate(punycode_str):
     if punycode_str.startswith("xn--"):

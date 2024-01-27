@@ -35,7 +35,7 @@ Having a tag of only PUNY_INVALID means that this name only displays blank or er
     ```bash
     pip install -r requirements.txt
     ```
-4. Place your Namebase export file (with default name: `Namebase-domains-export.csv`) , or Bobwallet export file (named: 'bob.csv') in the project directory.
+4. Place your Namebase export file (with default name: `Namebase-domains-export.csv`) , or Bobwallet export file (named: `bob.csv`) in the project directory.
 5. Run Punytag:
     ```bash
     python punytag.py

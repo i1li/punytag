@@ -1,6 +1,6 @@
 # Punytag
 
-Punytag is a tool that adds 2 columns to Namebase export files, providing additional information about Unicode and tags for each entry. It helps identify punycode status and basic tags for handshake domain names. (HNS is root. If it's not in the rootzone, it's not web3)
+Punytag is a tool that adds 2 columns to Namebase export files, which displays tags and unicode names (emojis or foreign characters). Sort your portfolio easier with punycode status and basic tags for handshake domain names. (HNS is root. If it's not in the rootzone, it's not web3.)
 
 ## Features
 

@@ -41,5 +41,5 @@ Having a tag of only PUNY_INVALID means that this name only displays blank or er
     python punytag.py
     ```
 6. Close and reopen the CSV file to see the updated columns. Sort the 'tags' column by ascending order for easier navigation.
-  ( Recommended oen-source lightweight program for .csv and other docs is: [LibreOffice](https://www.libreoffice.org) )
+   Recommended open-source lightweight software for .csv and other docs is: [LibreOffice](https://www.libreoffice.org)
 

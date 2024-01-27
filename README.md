@@ -1,10 +1,10 @@
 # Punytag
 
-Punytag is a tool that adds 2 columns to your [Namebase](https://namebase.io) or [Bobwallet](https://github.com/kyokan/bob-wallet) export file, which displays tags and unicode names (emojis or foreign characters). Sort your portfolio easier with punycode status and basic tags for Handshake domain names. (HNS is root. If it's not in the rootzone, it's not web3.)
+Punytag is a tool that adds 2 columns to your [Namebase](https://namebase.io) or [Bob Wallet](https://github.com/kyokan/bob-wallet) export file, which displays tags and unicode names (emojis or foreign characters). Sort your portfolio easier with punycode status and basic tags for Handshake domain names. (HNS is root. If it's not in the rootzone, it's not web3.)
 
 ## Features
 
-- Adds columns for "unicode" and "tags" to Namebase export files.
+- Adds columns for "unicode" and "tags" to Namebase or Bob Wallet export file.
 - Identifies punycode status as IDNA, Alt, or invalid.
 - Provides basic tags for domain names.
 
@@ -36,9 +36,13 @@ Having a tag of only PUNY_INVALID means that this name only displays blank or er
     pip install -r requirements.txt
     ```
 4. Place your Namebase export file (with default name: `Namebase-domains-export.csv`) , or Bobwallet export file (named: `bob.csv`) in the project directory.
-5. Run Punytag:
+5. To update your Namebase export file, run punytag.py :
     ```bash
     python punytag.py
+    ```
+    Or, to update your Bob Wallet export file, run punytag_bob.py :
+    ```bash
+    python punytag_bob.py
     ```
 6. Close and reopen the CSV file to see the updated columns. Sort the 'tags' column by ascending order for easier navigation.
 

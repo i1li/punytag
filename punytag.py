@@ -11,7 +11,6 @@ def punycode_convert_validate(punycode_str):
             try:
                 unicode_str = idna.decode(punycode_str)
                 return unicode_str, 'PUNY_ALT'
-            # Strip the unicode from the error message
             except Exception as e:
                 error_message = str(e)
                 unicode_match = re.search(r"'([^']*)'", error_message)
@@ -29,6 +28,12 @@ df = pd.read_csv(file_path)
 # Apply punycode_convert_validate to the 'name' column
 punycode_info = df['name'].apply(punycode_convert_validate)
 
+# Remove invalid and blank characters from 'unicode' column
+df['unicode'] = [re.sub(r'(?:\\x[\da-fA-F]{2})+|\\u(?:[\da-fA-F]{4})+', '', info[0]) if info[0] and info[0] != df.at[i, 'name'] else '' for i, info in enumerate(punycode_info)]
+
+# Tag names as 'PUNY_INVALID' if either invalid characters removed or 'unicode' is still the same as 'name'
+df['PUNY_INVALID'] = [1 if (info[0] != df.at[i, 'unicode']) or (info[0] and df.at[i, 'unicode'] == df.at[i, 'name']) else '' for i, info in enumerate(punycode_info)]
+
 # Create columns for each tag - 3D = 3 digits (numbers), 3L = 3 letters, 3C = 3 characters, etc
 df['3D'] = df['name'].apply(lambda x: 1 if x.isdigit() and len(x) == 3 else '')
 df['3L'] = df['name'].apply(lambda x: 1 if x.isalpha() and len(x) == 3 else '')
@@ -41,18 +46,12 @@ df['5L'] = df['name'].apply(lambda x: 1 if x.isalpha() and len(x) == 5 else '')
 df['6D'] = df['name'].apply(lambda x: 1 if x.isdigit() and len(x) == 6 else '')
 df['7D'] = df['name'].apply(lambda x: 1 if x.isdigit() and len(x) == 7 else '')
 
-# Remove invalid and blank characters from 'unicode' column
-df['unicode'] = [re.sub(r'(?:\\x[\da-fA-F]{2})+|\\u(?:[\da-fA-F]{4})+', '', info[0]) if info[0] and info[0] != df.at[i, 'name'] else '' for i, info in enumerate(punycode_info)]
-
-# Remove 'PUNY_ALT' tag when 'unicode' is blank
-df.loc[df['unicode'] == '', 'PUNY_ALT'] = ''
-
-# Tag names as 'PUNY_INVALID' if either invalid characters removed or 'unicode' is still the same as 'name'
-df['PUNY_INVALID'] = [1 if (info[0] != df.at[i, 'unicode']) or (info[0] and df.at[i, 'unicode'] == df.at[i, 'name']) else '' for i, info in enumerate(punycode_info)]
-
 # Apply tags based on punycode conversion results
 df['PUNY_IDNA'] = [1 if info[1] == 'PUNY_IDNA' else '' for info in punycode_info]
 df['PUNY_ALT'] = [1 if info[1] == 'PUNY_ALT' and info[0] else '' for info in punycode_info]  # Remove 'PUNY_ALT' tag when 'unicode' is empty
+
+# Remove 'PUNY_ALT' tag when 'unicode' is blank
+df.loc[df['unicode'] == '', 'PUNY_ALT'] = ''
 
 # Create the 'tags' column
 tags_columns = ['3D', '3L', '3C', '4D', '4L', '4C', '5D', '5L', '6D', '7D', 'PUNY_IDNA', 'PUNY_ALT', 'PUNY_INVALID']

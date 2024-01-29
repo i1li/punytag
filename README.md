@@ -16,9 +16,9 @@ Punytag is a tool that adds 2 columns to your [Namebase](https://namebase.io) or
 
 Names tagged as PUNY_IDNA cannot have other puny tags, while PUNY_ALT and PUNY_INVALID can be tagged individually or together.
 
-PUNY_ALT names can also have the PUNY_INVALID tag if some characters display, while others are invalid, caution should also be taken when considering these names.
-
 Having a tag of only PUNY_INVALID means that this name only displays blank or error characters, use the most caution with these.
+
+PUNY_ALT names can also have the PUNY_INVALID tag if some characters display, while others are invalid, caution should also be taken when considering these names.
 
 ## Basic Name Tagging
 

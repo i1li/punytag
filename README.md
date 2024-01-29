@@ -1,19 +1,25 @@
 # Punytag
 
-Punytag adds 2 columns to your [Namebase](https://namebase.io) or [Bob Wallet](https://github.com/kyokan/bob-wallet) export files, which displays tags and unicode names (emojis, symbols, or foreign characters). Sort your portfolio easier with punycode status and basic tags for Handshake domain names. ([HNS is root](https://youtu.be/mhANHB6_lRU&t=28). If it's not in the [root zone](https://en.wikipedia.org/wiki/Alternative_DNS_root#Handshake), it's not web3.)
+Punytag adds 2 columns to your [Namebase](https://namebase.io) or [Bob Wallet](https://github.com/kyokan/bob-wallet) export files, with tags and Unicode names. Sort your Handshake domain names easier with Unicode rendering (emojis, symbols, foreign characters), Punycode validation status, and basic categorization tags.
 
-
-- Adds unicode and tags columns to Namebase or Bob Wallet export files.
 - Identifies punycode status as IDNA, Alt, or invalid.
 - Provides basic categorization tags for domain names based on length, letters, numbers, etc.
 
-### What is Punycode? 
+**What is Handshake (HNS) ?**
+
+IDs and web addresses are the root of our online interactions. Handshake is a sovereign web address, user ID, digital wallet, and payment address. Fully decentralized, only owned and controlled by you!
+
+[HNS is root](https://youtu.be/mhANHB6_lRU&t=28). If it's not in the [root zone](https://en.wikipedia.org/wiki/Alternative_DNS_root#Handshake), it's not web3. Here's a list of more [HNS related repos](https://github.com/stars/i1li/lists/hns).
+
+**What is Punycode?**
 
 "Domain names can only contain a limited set of characters so emoji and foreign character domains are puny encoded — when you type an emoji into a browser, it will look up the punycode of that emoji. In other words, the punycode xn--* string is the actual domain name, and not the emoji rendering." - [Namebase](https://support.namebase.io/en/articles/6770813-why-do-emoji-domains-begin-with-xn-strings)
 
 ## Challenge
 
-Neither Bob Wallet, nor Namebase provides proper Punycode validation labeling on their domain pages, or export files. Users are left to manually copy and paste each Punycode into tools like punycoder.com, but even in that case, it doesn't display any Unicode when there are any invalid characters, when in practice many of those names are still able to get at least partially rendered by the browser. The export files also don't include the actual visual representation (Unicode) of the Punycode, making large sets of names in export files largely unrecognizable from eachother as just a list of names starting with 'xn--' plus random letter and numbers, rather than the emojis, symbols, or foreign script characters.
+Neither Bob Wallet, nor Namebase provides proper Punycode validation labeling on their domain pages, or export files. Users are left to manually copy and paste each Punycode into tools like punycoder.com, but even in that case, it doesn't display any Unicode when there are any invalid characters, (when in practice many of those names are still able to get at least partially rendered by the browser.)
+
+The export files also don't include the actual visual representation (Unicode) of the Punycode, making large sets of Punycode names largely unrecognizable from each other, as just a list of names starting with 'xn--', plus random letters and numbers, rather than the recognizable emojis, symbols, and foreign script characters.
 
 ## Sortable Tags for Punycode Validation and Basic Name Categorization
 

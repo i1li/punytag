@@ -14,7 +14,7 @@ Punytag adds 2 columns to your [Namebase](https://namebase.io) or [Bob Wallet](h
 
 ## Challenge
 
-Neither Bob Wallet, nor Namebase provides proper Punycode validation labeling on their domain pages, or export files. Users are left to manually copy and paste each Punycode into punycoder.com, but even in that case, it does not display any Unicode at all when there are any invalid characters. The export files also don't include the actual visual representation (Unicode) of the Punycode, making large sets of names largely unrecognizable from eachother as just a list of names starting with 'xn--' plus random letter and numbers, rather than the emojis, symbols, or foreign script characters.
+Neither Bob Wallet, nor Namebase provides proper Punycode validation labeling on their domain pages, or export files. Users are left to manually copy and paste each Punycode into tools like punycoder.com, but even in that case, it doesn't display any Unicode when there are any invalid characters, when in practice many of those names are still able to get at least partially rendered by the browser. The export files also don't include the actual visual representation (Unicode) of the Punycode, making large sets of names in export files largely unrecognizable from eachother as just a list of names starting with 'xn--' plus random letter and numbers, rather than the emojis, symbols, or foreign script characters.
 
 ## Punycode Tags
 

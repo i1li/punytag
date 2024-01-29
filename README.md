@@ -40,11 +40,11 @@ Having a tag of only PUNY_INVALID means that this name only displays blank or er
    Namebase transactions export (with default name: `HNS-transaction-history-latest.csv`),
    Bobwallet portfolio export (named: `bob.csv`), or
    Bob Wallet transactions export (named: `bob_tr.csv`)
-6. To update your Namebase portfolio export file, run punytag.py :
+6. To update your Namebase portfolio export file, run punytag_nb.py :
     ```bash
-    python punytag.py
+    python punytag_nb.py
     ```
-   To update your Namebase transactions history export file, run punytag_bob_tr.py :
+   To update your Namebase transactions history export file, run punytag_nb_tr.py :
     ```bash
     python punytag_nb_tr.py
     ```

@@ -1,12 +1,20 @@
 # Punytag
 
-Punytag is a tool that adds 2 columns to your [Namebase](https://namebase.io) or [Bob Wallet](https://github.com/kyokan/bob-wallet) export files, which displays tags and unicode names (emojis or foreign characters). Sort your portfolio easier with punycode status and basic tags for Handshake domain names. ([HNS is root](https://youtu.be/mhANHB6_lRU&t=28). If it's not in the [root zone](https://en.wikipedia.org/wiki/Alternative_DNS_root#Handshake), it's not web3.)
+Punytag adds 2 columns to your [Namebase](https://namebase.io) or [Bob Wallet](https://github.com/kyokan/bob-wallet) export files, which displays tags and unicode names (emojis, symbols, or foreign characters). Sort your portfolio easier with punycode status and basic tags for Handshake domain names. ([HNS is root](https://youtu.be/mhANHB6_lRU&t=28). If it's not in the [root zone](https://en.wikipedia.org/wiki/Alternative_DNS_root#Handshake), it's not web3.)
 
 ## Features
 
 - Adds columns for "unicode" and "tags" to Namebase or Bob Wallet export files.
 - Identifies punycode status as IDNA, Alt, or invalid.
 - Provides basic tags for domain names.
+
+### What is Punycode? 
+
+"Domain names can only contain a limited set of characters so emoji and foreign character domains are puny encoded — when you type an emoji into a browser, it will look up the punycode of that emoji. In other words, the punycode xn--* string is the actual domain name, and not the emoji rendering." - [Namebase](https://support.namebase.io/en/articles/6770813-why-do-emoji-domains-begin-with-xn-strings)
+
+## Challenge
+
+Neither Bob Wallet, nor Namebase provides proper Punycode validation labeling on their domain pages, or export files. Users are left to manually copy and paste each Punycode into punycoder.com, but even in that case, it does not display any Unicode at all when there are any invalid characters. The export files also don't include the actual visual representation (Unicode) of the Punycode, making large sets of names largely unrecognizable from eachother as just a list of names starting with 'xn--' plus random letter and numbers, rather than the emojis, symbols, or foreign script characters.
 
 ## Punycode Tags
 

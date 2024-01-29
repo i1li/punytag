@@ -2,11 +2,10 @@
 
 Punytag adds 2 columns to your [Namebase](https://namebase.io) or [Bob Wallet](https://github.com/kyokan/bob-wallet) export files, which displays tags and unicode names (emojis, symbols, or foreign characters). Sort your portfolio easier with punycode status and basic tags for Handshake domain names. ([HNS is root](https://youtu.be/mhANHB6_lRU&t=28). If it's not in the [root zone](https://en.wikipedia.org/wiki/Alternative_DNS_root#Handshake), it's not web3.)
 
-## Features
 
-- Adds columns for "unicode" and "tags" to Namebase or Bob Wallet export files.
+- Adds unicode and tags columns to Namebase or Bob Wallet export files.
 - Identifies punycode status as IDNA, Alt, or invalid.
-- Provides basic tags for domain names.
+- Provides basic categorization tags for domain names based on length, letters, numbers, etc.
 
 ### What is Punycode? 
 
@@ -16,8 +15,9 @@ Punytag adds 2 columns to your [Namebase](https://namebase.io) or [Bob Wallet](h
 
 Neither Bob Wallet, nor Namebase provides proper Punycode validation labeling on their domain pages, or export files. Users are left to manually copy and paste each Punycode into tools like punycoder.com, but even in that case, it doesn't display any Unicode when there are any invalid characters, when in practice many of those names are still able to get at least partially rendered by the browser. The export files also don't include the actual visual representation (Unicode) of the Punycode, making large sets of names in export files largely unrecognizable from eachother as just a list of names starting with 'xn--' plus random letter and numbers, rather than the emojis, symbols, or foreign script characters.
 
-## Punycode Tags
+## Sortable Tags for Punycode Validation and Basic Name Categorization
 
+- **3D:** 3 digits (numbers) - **3L:** 3 letters (letters only) - **3C:** 3 characters (letters, numbers, -, _) - and so on up to 7
 - **PUNY_IDNA:** Highest level of compliance, ensuring consistent results across programs.
 - **PUNY_ALT:** Second highest level of compliance, may produce inconsistent results due to alternate punycode. The punycode here still displays valid unicode, but the same emoticon or character can also be produced with different punycode. This means you could get inconsistent results when copying and pasting what appears to be the same emoticon or character, but which uses a different punycode.
 - **PUNY_INVALID:** Characters don't display correctly, potentially showing as empty space, or error/filler characters.
@@ -27,13 +27,6 @@ Names tagged as PUNY_IDNA cannot have other puny tags, while PUNY_ALT and PUNY_I
 Having a tag of only PUNY_INVALID means that this name only displays blank or error characters, use the most caution with these.
 
 PUNY_ALT names can also have the PUNY_INVALID tag if some characters display, while others are invalid, caution should also be taken when considering these names.
-
-## Basic Name Tagging
-
-- **3D:** 3 digits (numbers)
-- **3L:** 3 letters (letters only)
-- **3C:** 3 characters (letters, numbers, -, _)
-- and so on up to 7D
 
 ## Getting Started
 

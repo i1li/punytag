@@ -21,30 +21,30 @@ def punycode_convert_validate(punycode_str):
     else:
         return '', ''
 
-# Load the CSV file with no header
+# Load the CSV file with no header and assign column names
 file_path = 'bob.csv'
-df = pd.read_csv(file_path, header=None)
+df = pd.read_csv(file_path, header=None, names=['name'])
 
 # Apply punycode_convert_validate to the 'name' column
-punycode_info = df[0].apply(punycode_convert_validate)
+punycode_info = df['name'].apply(punycode_convert_validate)
 
 # Remove invalid and blank characters from 'unicode' column
-df['unicode'] = [re.sub(r'(?:\\x[\da-fA-F]{2})+|\\u(?:[\da-fA-F]{4})+', '', info[0]) if info[0] and info[0] != df[0][i] else '' for i, info in enumerate(punycode_info)]
+df['unicode'] = [re.sub(r'(?:\\x[\da-fA-F]{2})+|\\u(?:[\da-fA-F]{4})+', '', info[0]) if info[0] and info[0] != df.at[i, 'name'] else '' for i, info in enumerate(punycode_info)]
 
 # Tag names as 'PUNY_INVALID' if either invalid characters removed or 'unicode' is still the same as 'name'
-df['PUNY_INVALID'] = [1 if (info[0] != df[0][i]) or (info[0] and df[0][i] == df.at[i, 0]) else '' for i, info in enumerate(punycode_info)]
+df['PUNY_INVALID'] = [1 if (info[0] != df.at[i, 'unicode']) or (info[0] and df.at[i, 'unicode'] == df.at[i, 'name']) else '' for i, info in enumerate(punycode_info)]
 
 # Create columns for each tag - 3D = 3 digits (numbers), 3L = 3 letters, 3C = 3 characters, etc
-df['3D'] = df[0].apply(lambda x: 1 if x.isdigit() and len(x) == 3 else '')
-df['3L'] = df[0].apply(lambda x: 1 if x.isalpha() and len(x) == 3 else '')
-df['3C'] = df.apply(lambda x: 1 if len(x[0]) == 3 and not x['3L'] and not x['3D'] else '', axis=1)
-df['4D'] = df[0].apply(lambda x: 1 if x.isdigit() and len(x) == 4 else '')
-df['4L'] = df[0].apply(lambda x: 1 if x.isalpha() and len(x) == 4 else '')
-df['4C'] = df.apply(lambda x: 1 if len(x[0]) == 4 and not x['4L'] and not x['4D'] else '', axis=1)
-df['5D'] = df[0].apply(lambda x: 1 if x.isdigit() and len(x) == 5 else '')
-df['5L'] = df[0].apply(lambda x: 1 if x.isalpha() and len(x) == 5 else '')
-df['6D'] = df[0].apply(lambda x: 1 if x.isdigit() and len(x) == 6 else '')
-df['7D'] = df[0].apply(lambda x: 1 if x.isdigit() and len(x) == 7 else '')
+df['3D'] = df['name'].apply(lambda x: 1 if x.isdigit() and len(x) == 3 else '')
+df['3L'] = df['name'].apply(lambda x: 1 if x.isalpha() and len(x) == 3 else '')
+df['3C'] = df.apply(lambda x: 1 if len(x['name']) == 3 and not x['3L'] and not x['3D'] else '', axis=1)
+df['4D'] = df['name'].apply(lambda x: 1 if x.isdigit() and len(x) == 4 else '')
+df['4L'] = df['name'].apply(lambda x: 1 if x.isalpha() and len(x) == 4 else '')
+df['4C'] = df.apply(lambda x: 1 if len(x['name']) == 4 and not x['4L'] and not x['4D'] else '', axis=1)
+df['5D'] = df['name'].apply(lambda x: 1 if x.isdigit() and len(x) == 5 else '')
+df['5L'] = df['name'].apply(lambda x: 1 if x.isalpha() and len(x) == 5 else '')
+df['6D'] = df['name'].apply(lambda x: 1 if x.isdigit() and len(x) == 6 else '')
+df['7D'] = df['name'].apply(lambda x: 1 if x.isdigit() and len(x) == 7 else '')
 
 # Apply tags based on punycode conversion results
 df['PUNY_IDNA'] = [1 if info[1] == 'PUNY_IDNA' else '' for info in punycode_info]

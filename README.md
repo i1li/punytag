@@ -1,6 +1,6 @@
 # Punytag
 
-Punytag is a tool that adds 2 columns to your [Namebase](https://namebase.io) or [Bob Wallet](https://github.com/kyokan/bob-wallet) export files, which displays tags and unicode names (emojis or foreign characters). Sort your portfolio easier with punycode status and basic tags for Handshake domain names. (HNS is root. If it's not in the rootzone, it's not web3.)
+Punytag is a tool that adds 2 columns to your [Namebase](https://namebase.io) or [Bob Wallet](https://github.com/kyokan/bob-wallet) export files, which displays tags and unicode names (emojis or foreign characters). Sort your portfolio easier with punycode status and basic tags for Handshake domain names. ([HNS is root](https://youtu.be/mhANHB6_lRU&t=28). If it's not in the [root zone](https://en.wikipedia.org/wiki/Alternative_DNS_root#Handshake), it's not web3.)
 
 ## Features
 

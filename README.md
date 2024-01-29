@@ -4,7 +4,7 @@ Punytag is a tool that adds 2 columns to your [Namebase](https://namebase.io) or
 
 ## Features
 
-- Adds columns for "unicode" and "tags" to Namebase or Bob Wallet export file.
+- Adds columns for "unicode" and "tags" to Namebase or Bob Wallet export files.
 - Identifies punycode status as IDNA, Alt, or invalid.
 - Provides basic tags for domain names.
 
@@ -35,12 +35,20 @@ Having a tag of only PUNY_INVALID means that this name only displays blank or er
     ```bash
     pip install -r requirements.txt
     ```
-4. Place your Namebase export file (with default name: `Namebase-domains-export.csv`) , Bobwallet export file (named: `bob.csv`), or Bob Wallet transactions history (named: 'bob_tr.csv') in the project directory.
-5. To update your Namebase export file, run punytag.py :
+4. Place the file(s) you'd like updated into the project directory:
+   Namebase portfolio export (with default name: `Namebase-domains-export.csv`),
+   Namebase transactions export (with default name: `HNS-transaction-history-latest.csv`),
+   Bobwallet portfolio export (named: `bob.csv`), or
+   Bob Wallet transactions export (named: `bob_tr.csv`)
+6. To update your Namebase portfolio export file, run punytag.py :
     ```bash
     python punytag.py
     ```
-    Or, to update your Bob Wallet export file, run punytag_bob.py :
+   To update your Namebase transactions history export file, run punytag_bob_tr.py :
+    ```bash
+    python punytag_nb_tr.py
+    ```
+    To update your Bob Wallet portfolio export file, run punytag_bob.py :
     ```bash
     python punytag_bob.py
     ```
@@ -48,6 +56,6 @@ Having a tag of only PUNY_INVALID means that this name only displays blank or er
     ```bash
     python punytag_bob_tr.py
     ```
-6. Close and reopen the CSV file to see the updated columns. Sort the 'tags' column by ascending order for easier navigation.
+7. Close and reopen the CSV file to see the updated columns. Sort the 'tags' column by ascending order for easier navigation.
 
    Recommended open-source lightweight software for .csv and other docs is: [LibreOffice](https://www.libreoffice.org)

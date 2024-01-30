@@ -74,16 +74,16 @@ PUNY_ALT names can also have the PUNY_INVALID tag if some characters display, wh
 
 7.  To convert any list of Unicode to Punycode, or Punicode to Unicode, save the appropriately named file, with one entry per line, in the project directory:
 
-    Save your Punycode list as puny2.csv (or .txt),
+    Save your Punycode list as `puny2.csv` (or `puny2.txt`),
 
-    Save your Unicode as uni2.csv (or .txt)
+    Save your Unicode list as `uni2.csv` (or `uni2.txt`)
     To convert one or both of those lists, run `puny2uni.py` :
     ```bash
     python puny2uni.py
     ```
 
     
-Your output is saved as new file(s) named puny2uni.csv, and/or uni2puny.csv
+Your output is saved as new file(s) named `puny2uni.csv`, and/or `uni2puny.csv`
 
 
 Recommended open-source lightweight software for .csv and other docs is: [LibreOffice](https://www.libreoffice.org)

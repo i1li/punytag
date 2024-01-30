@@ -2,6 +2,8 @@
 
 Punytag adds 2 columns to your [Namebase](https://namebase.io) or [Bob Wallet](https://github.com/kyokan/bob-wallet) export files, with tags and Unicode names. Sort your Handshake domain names easier with Unicode rendering (emojis, symbols, foreign characters), Punycode validation status, and basic categorization tags.
 
+Also includes a program to convert any list of Punycode to Unicode, or Unicode to Punycode.
+
 - Identifies punycode status as IDNA, Alt, or invalid.
 - Provides basic categorization tags for domain names based on length, letters, numbers, etc.
 

@@ -77,11 +77,11 @@ PUNY_ALT names can also have the PUNY_INVALID tag if some characters display, wh
     Save your Punycode list as puny2.csv (or .txt),
 
     Save your Unicode as uni2.csv (or .txt)
-
-   To convert one or both of those lists, run `puny2uni.py` :
+    To convert one or both of those lists, run `puny2uni.py` :
     ```bash
     python puny2uni.py
     ```
+
     
 Your output is saved as new file(s) named puny2uni.csv, and/or uni2puny.csv
 
